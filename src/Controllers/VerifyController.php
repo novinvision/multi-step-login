@@ -2,14 +2,13 @@
 
 namespace NovinVision\MultiStepLogin\Controllers;
 
-use App\Http\Requests\Request;
+use Illuminate\Http\Request;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use NovinVision\MultiStepLogin\Models\UserVerification;
-use NovinVision\MultiStepLogin\Requests\AuthenticateRequest;
 
 class VerifyController extends Controller
 {

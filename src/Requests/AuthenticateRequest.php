@@ -2,11 +2,8 @@
 
 namespace NovinVision\MultiStepLogin\Requests;
 
-use App\Helpers\Str;
-use App\Http\Requests\Request;
+use Illuminate\Http\Request;
 use App\Http\Requests\TourSearchRequest;
-use App\Models\Location;
-use App\Models\Tour;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;

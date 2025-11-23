@@ -2,7 +2,7 @@
 
 namespace NovinVision\MultiStepLogin\Controllers;
 
-use App\Http\Requests\Request;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -101,9 +101,9 @@ class AuthenticateController extends Controller
     protected function getOldData(Request $request)
     {
         $username = $request->old('username') ?: $request->session()->get('username');
-       return [
-           'mobile' => is_numeric($username) ? $username : '',
-           'email' => filter_var($username, FILTER_VALIDATE_EMAIL) ? $username : '',
-       ];
+        return [
+            'mobile' => is_numeric($username) ? $username : '',
+            'email' => filter_var($username, FILTER_VALIDATE_EMAIL) ? $username : '',
+        ];
     }
 }
