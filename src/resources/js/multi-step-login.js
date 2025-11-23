@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $('form#multi-step-login').submit(e => {
         let submitButton = $(this).find('[type="submit"]');
-        // $(submitButton).attr('disabled', 'disabled');
-        // $(submitButton).addClass('loading');
+        $(submitButton).attr('disabled', 'disabled');
+        $(submitButton).addClass('loading');
     });
 
     document.querySelectorAll('[data-length-submit]').forEach(input => {
