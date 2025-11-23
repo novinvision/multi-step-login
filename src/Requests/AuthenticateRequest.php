@@ -2,15 +2,13 @@
 
 namespace NovinVision\MultiStepLogin\Requests;
 
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Http\FormRequest;
 use App\Http\Requests\TourSearchRequest;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 use NovinVision\ProjectHelper\Core\Jalalian;
 use NovinVision\ProjectHelper\Rules\JalalianDate;
 
-class AuthenticateRequest extends Request
+class AuthenticateRequest extends FormRequest
 {
 
     /**

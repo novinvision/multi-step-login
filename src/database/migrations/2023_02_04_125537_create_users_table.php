@@ -13,30 +13,32 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->fulltext();
-            $table->string('company')->nullable();
+        if(!Schema::hasTable('users')) {
+            Schema::create('users', function (Blueprint $table) {
+                $table->id();
+                $table->string('name')->fulltext();
+                $table->string('company')->nullable();
 
-            $table->string('mobile', 30)->unique();
-            $table->string('email')->nullable()->index();
+                $table->string('mobile', 30)->unique();
+                $table->string('email')->nullable()->index();
 
-            $table->string('tel', 30)->nullable();
+                $table->string('tel', 30)->nullable();
 
-            $table->timestamp('mobile_verified_at')->nullable();
-            $table->timestamp('email_verified_at')->nullable();
+                $table->timestamp('mobile_verified_at')->nullable();
+                $table->timestamp('email_verified_at')->nullable();
 
-            $table->set('status', [
-                'active',
-                'disable',
-            ])->index()->default('active');
+                $table->set('status', [
+                    'active',
+                    'disable',
+                ])->index()->default('active');
 
-            $table->string('password');
-            $table->rememberToken();
+                $table->string('password');
+                $table->rememberToken();
 
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
-        });
+                $table->timestamp('created_at')->useCurrent();
+                $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
+            });
+        }
     }
 
     /**

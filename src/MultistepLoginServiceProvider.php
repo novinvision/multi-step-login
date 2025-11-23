@@ -23,6 +23,7 @@ class MultistepLoginServiceProvider extends ServiceProvider
             __DIR__ . '/resources/css' => public_path('css'),
             __DIR__ . '/resources/js' => public_path('js'),
             __DIR__ . '/resources/fonts' => public_path('fonts'),
+            __DIR__ . '/resources/lang' => resource_path('lang'),
             __DIR__ . '/resources/views' => resource_path('views/vendor/multi-step-login'),
         ], 'multi-step-login');
 

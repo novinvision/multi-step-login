@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(\NovinVision\MultiStepLogin\Controllers\AuthenticateController::class)->middleware([
-    \Illuminate\Session\Middleware\StartSession::class,
-    \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-    \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-    \NovinVision\MultiStepLogin\Middlewares\HandleNextUrl::class,
     'web',
     'guest',
 ])->group(function () {
@@ -35,11 +31,6 @@ Route::controller(\NovinVision\MultiStepLogin\Controllers\AuthenticateController
 });
 
 Route::controller(\NovinVision\MultiStepLogin\Controllers\VerifyController::class)->middleware([
-    \Illuminate\Session\Middleware\StartSession::class,
-    \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-    \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-    \NovinVision\MultiStepLogin\Middlewares\HandleNextUrl::class,
-    \NovinVision\MultiStepLogin\Middlewares\AuthenticateNonVerify::class,
     'web',
     'auth',
 ])->prefix('verify/{field?}')->group(function () {

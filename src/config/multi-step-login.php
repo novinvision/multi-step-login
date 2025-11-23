@@ -59,7 +59,7 @@ return [
             'validation' => [
                 'required',
                 'unique:users',
-                'mobile',
+                'numeric',
             ],
             'placeholder' => 'تلفن همراه را وارد کنید',
             'row-class' => 'col-12 col-sm-6'
