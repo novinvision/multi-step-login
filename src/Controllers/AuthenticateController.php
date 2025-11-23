@@ -5,14 +5,13 @@ namespace NovinVision\MultiStepLogin\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
 use NovinVision\MultiStepLogin\Requests\AuthenticateRequest;
 
 class AuthenticateController extends Controller
 {
     public function index(AuthenticateRequest $request)
     {
-        return view('novinvision.multi-step-login::username');
+        return view('multi-step-login::username');
     }
 
     public function username(AuthenticateRequest $request)
@@ -31,7 +30,7 @@ class AuthenticateController extends Controller
 
     public function register(AuthenticateRequest $request)
     {
-        return view('novinvision.multi-step-login::register', [
+        return view('multi-step-login::register', [
             'oldData' => $this->getOldData($request)
         ]);
     }
@@ -66,7 +65,7 @@ class AuthenticateController extends Controller
 
     public function password(AuthenticateRequest $request)
     {
-        return view('novinvision.multi-step-login::password', [
+        return view('multi-step-login::password', [
             'username' => $request->session()->get('username'),
             'oldData' => $this->getOldData($request)
         ]);

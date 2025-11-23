@@ -16,7 +16,7 @@ class VerifyController extends Controller
     {
         $this->resend($request, $field);
 
-        return view('novinvision.multi-step-login::verify', [
+        return view('multi-step-login::verify', [
             'field' => $field,
             'countdown' => RateLimiter::availableIn("otp_verification_countdown.$field"),
             'username' => $request->user()->{$field} ?? null,
@@ -31,7 +31,7 @@ class VerifyController extends Controller
 
         $code = UserVerification::verify($request->user(), $request->post('code'), $field);
         if (!$code) {
-            return back()->withErrors(trans('novinvision.multi-step-login::multi-step-login.invalid-verify-code-error'));
+            return back()->withErrors(trans('multi-step-login::multi-step-login.invalid-verify-code-error'));
         }
 
         $request->user()->forceFill([
