@@ -1,4 +1,4 @@
-@extends('novinvision.multi-step-login::layouts.authenticate')
+@extends('multi-step-login::layouts.authenticate')
 
 @section('content')
     <div class="p-3">
