@@ -1,0 +1,28 @@
+{
+    "name": "novinvision/multi-step-login",
+    "description": "A laravel package for authenticate with email on sms otp or login with username",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mehran Ranji",
+            "email": "mehran.ranji@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "NovinVision\\MultiStepLogin\\": "src/"
+        }
+    },
+    "require": {
+        "laravel/framework": ">10.0",
+        "propaganistas/laravel-phone": "^5.3"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NovinVision\\MultiStepLogin\\MultistepLoginServiceProvider"
+            ]
+        }
+    }
+}
