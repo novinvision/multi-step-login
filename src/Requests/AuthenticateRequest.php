@@ -2,6 +2,7 @@
 
 namespace NovinVision\MultiStepLogin\Requests;
 
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Http\Requests\TourSearchRequest;
 use Illuminate\Database\Eloquent\Model;
@@ -41,6 +42,10 @@ class AuthenticateRequest extends FormRequest
         return new (config('multi-step-login.model'));
     }
 
+    /**
+     * @param string $username
+     * @return Model|User|null
+     */
     public function getUserWithUsername(string $username)
     {
         $query = $this->userModel()->newQuery();

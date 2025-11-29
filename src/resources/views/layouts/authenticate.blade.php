@@ -17,7 +17,7 @@
     <script src="{{asset('js/jquery-3.7.1.slim.min.js')}}"></script>
     <script src="{{asset('js/multi-step-login.js')}}"></script>
 </head>
-<body class="bg-body-secondary fanum">
+<body class="bg-body-tertiary fanum">
 <div class="container py-3">
     <div class="row">
         <div class="col-12 col-sm-11 col-md-9 col-lg-6 col-xl-5 mx-auto">

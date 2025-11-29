@@ -28,6 +28,12 @@ Route::controller(\NovinVision\MultiStepLogin\Controllers\AuthenticateController
 
     Route::get('forget-password', 'forgetPassword')->name('forget-password');
     Route::post('forget-password', 'requestForgetPassword');
+
+    Route::get('forget-password/verify', 'forgetPasswordVerify')->name('forget-password-verify');
+    Route::post('forget-password/verify', 'forgetPasswordVerifySubmit');
+
+    Route::get('forget-password/change-password/{hash}', 'forgetNewPassword')->name('forget-password-change-password');
+    Route::post('forget-password/change-password/{hash}', 'forgetNewPasswordSubmit');
 });
 
 Route::controller(\NovinVision\MultiStepLogin\Controllers\VerifyController::class)->middleware([

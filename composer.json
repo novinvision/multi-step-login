@@ -5,8 +5,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Mehran Ranji",
-            "email": "mehran.ranji@gmail.com"
+            "name": "Novin Vision",
+            "email": "novinvision.com@gmail.com"
         }
     ],
     "autoload": {
@@ -21,7 +21,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "NovinVision\\MultiStepLogin\\MultistepLoginServiceProvider"
+                "NovinVision\\MultiStepLogin\\MultistepLoginServiceProvider",
+                "NovinVision\\MultiStepLogin\\PasswordResetServiceProvider"
             ]
         }
     }
