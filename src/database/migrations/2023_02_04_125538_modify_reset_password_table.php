@@ -10,6 +10,12 @@ return new class extends Migration {
      */
     public function up(): void
     {
+        if(Schema::hasColumn(config("auth.passwords.users.table"), 'user_id') && !Schema::hasColumn(config("auth.passwords.users.table"), 'user_type')){
+            Schema::table(config("auth.passwords.users.table"), function (Blueprint $table) {
+                $table->dropColumn('user_id');
+            });
+        }
+
         if (Schema::hasTable(config("auth.passwords.users.table"))) Schema::table(config("auth.passwords.users.table"), function (Blueprint $table) {
             $table->nullableMorphs('user');
         });
